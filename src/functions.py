@@ -29,7 +29,7 @@ def mask_card_number(card_number):
     num_card_parts = [''.join(num_card[i:i + 4]) for i in range(0, num_len, 4)]
     num_card_str = ' '.join(num_card_parts)
 
-    return f'{card_number[:len(name_card)]} {num_card_str[:7]}{CARD_MASK} {card_number[-4:]}'
+    return f'{card_number[:len(name_card)]}{num_card_str[:7]}{CARD_MASK} {card_number[-4:]}'
 
 
 def mask_account_number(account_number):
