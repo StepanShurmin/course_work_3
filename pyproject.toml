@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "course-work-3"
+version = "0.1.0"
+description = ""
+authors = ["StepanShurmin <shurmin.sa@gmail.com>"]
+readme = "README.md"
+packages = [{include = "course_work_3"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+my-module = "^1.6.2"
+
+
+[tool.poetry.group.dev.dependencies]
+datetime = "^5.1"
+pytest-cov = "^4.1.0"
+pytest = "^7.4.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
