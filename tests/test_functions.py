@@ -1,12 +1,15 @@
+'''Импортируем необходимые модули и функции.'''
 from src.functions import mask_account_number, mask_card_number, get_last_executed_operations, load_data
 
 
 def test_load_data():
+    '''Тестируем возврат нужного формата из json-файла.'''
     data = load_data()
     assert isinstance(data, list)
 
 
 def test_mask_card_number():
+    '''Тестируем возврат замаскированного номера карты.'''
     card_number = 'MasterCard 1796816785869527'
     expected_result = 'MasterCard 1796 81** **** 9527'
     assert mask_card_number(card_number) == expected_result
@@ -25,12 +28,14 @@ def test_mask_card_number():
 
 
 def test_mask_account_number():
+    '''Тестируем возврат замаскированного номера счёта.'''
     account_number = 'Счет 14073196441261107791'
     expected_result = '**7791'
     assert mask_account_number(account_number) == expected_result
 
 
 def test_get_last_executed_operations():
+    '''Тестируем возврат выполненных, отсортированных операций.'''
     data = [
         {'state': 'EXECUTED', 'date': '01.05.2022'},
         {'state': 'EXECUTED', 'date': '03.05.2022'},
